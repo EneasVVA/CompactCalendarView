@@ -1,11 +1,13 @@
 package com.github.sundeepk.compactcalendarview.domain;
 
+import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 
 public class Event {
 
     private int color;
     private long timeInMillis;
+    private Drawable drawable;
     private Object data;
 
     public Event(int color, long timeInMillis) {
@@ -30,6 +32,10 @@ public class Event {
     @Nullable
     public Object getData() {
         return data;
+    }
+
+    public void setDrawable(Drawable drawable) {
+        this.drawable = drawable;
     }
 
     @Override
@@ -61,5 +67,9 @@ public class Event {
                 ", timeInMillis=" + timeInMillis +
                 ", data=" + data +
                 '}';
+    }
+
+    public Drawable getDrawable() {
+        return drawable;
     }
 }
